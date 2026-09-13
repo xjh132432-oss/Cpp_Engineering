@@ -73,3 +73,6 @@ calculator2
 
 # macOS
 .DS_Store
+
+#vscode
+*.vscode/
