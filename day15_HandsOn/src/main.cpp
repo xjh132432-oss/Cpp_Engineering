@@ -15,5 +15,9 @@ int main()
              <<substract(20,10)
              <<std::endl;
 
+    std::cout<<"square:"
+             <<square(10)
+             <<std::endl;
+
     return 0;
 }
