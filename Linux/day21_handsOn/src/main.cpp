@@ -19,8 +19,9 @@ int main()
 		student[i].age=age;
 		student[i].score=score;
 	}
+	std::vector<Student> empty;
 
-	Student max=getMax(student);
+	const Student* max=getMax(empty);
 	Student min=getMin(student);
 	
 	std::cout<<"Min:"<<std::endl
@@ -28,14 +29,22 @@ int main()
               << "Age:" << min.age << std::endl
               << "Score:" << min.score << std::endl
 	      <<std::endl;
-
+	if(max==nullptr)
+	{
+		std::cout<<"empty vector!"<<std::endl;
+	}
+	else{
 	std::cout<<"Max:"<<std::endl
-		 << "Name:" << max.name << std::endl
-              << "Age:" << max.age << std::endl
-              << "Score:" << max.score << std::endl
+		 << "Name:" << max->name << std::endl
+              << "Age:" << max->age << std::endl
+              << "Score:" << max->score << std::endl
 	      <<std::endl;
+	}
+	//std::cout<<"Average:"<<getAverage(student);
+
 	
-	std::cout<<"Average:"<<getAverage(student);
+
+	std::cout<<getAverage(empty)<<std::endl;
 
 	return 0;
 }

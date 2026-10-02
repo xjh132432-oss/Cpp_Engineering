@@ -4,18 +4,36 @@
 
 double getAverage(const std::vector<Student>& student)
 {
+	
 	double sum=0.0;
 
-	for(const auto& x:student)
+	if(student.empty())
 	{
-		sum+=x.score;
+		return sum;
 	}
-	
-	return sum/student.size();
+
+	else
+	{
+
+
+		for(const auto& x:student)
+		{
+			sum+=x.score;
+		}
+
+		return sum/student.size();
+	}
+
+
 } 
 
-const Student& getMax(const std::vector<Student>& student)
-{
+const Student* getMax(const std::vector<Student>& student)
+{	
+	if(student.empty())
+	{
+		return nullptr;
+	}
+
 	double max=student[0].score;
 	const Student* maxpeople=&student[0];
 
@@ -27,7 +45,7 @@ const Student& getMax(const std::vector<Student>& student)
 			maxpeople=&student[i];
 		}	
 	}
-	return *maxpeople;
+	return maxpeople;
 }
 
 const Student& getMin(const std::vector<Student>& student)
